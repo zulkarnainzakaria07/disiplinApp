@@ -73,7 +73,7 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               
-                Selamat Datang, Admin
+                Selamat Datang, Admin Aplikasi Penegakan Disiplin Siswa
             
               <div
                 class="dropdown-menu dropdown-menu-right navbar-dropdown"
