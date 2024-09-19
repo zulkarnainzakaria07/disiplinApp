@@ -22,3 +22,7 @@ Route::post('/guru/store', [GuruController::class, 'store'])->name('guru.store')
 Route::get('/guru/edit/{id}', [GuruController::class, 'edit'])->name('guru.edit');
 Route::post('/guru/update',[GuruController::class, 'update'])->name('guru.update');
 Route::post('/guru/destroy',[GuruController::class, 'destroy'])->name('guru.destroy');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});

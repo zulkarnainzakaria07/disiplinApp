@@ -70,6 +70,8 @@ class SiswaController extends Controller
      */
     public function update(Request $request)
     {     
+        $file = $request->file('foto');
+
         $data = Siswa::where('id','=',$request->id)->first();
         $data->nama = $request->nama;
         $data->jk = $request->jk;
@@ -78,10 +80,8 @@ class SiswaController extends Controller
         $data->tanggalLahir = $request->tanggalLahir;
         $data->telp = $request->telp;
         if($request->file('foto') != null){
-            $file = $request->file('foto');
             $name = $file->getClientOriginalName();
             $request->file('foto')->move('foto_siswa',$name);  
-
             $data->foto = $name;
         }
         $data->update();

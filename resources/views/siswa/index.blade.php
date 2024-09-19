@@ -20,7 +20,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('siswa.create')}}" class="btn btn-md btn-success">Tambah Data</a>
+                        <a href="{{ route('siswa.create')}}" class="btn btn-md btn-success" style="padding-bottom: 5px;">Tambah Data</a>
                         <div class="table-responsive">
                             <table id="example" class="display expandable-table" style="width: 100%">
                                 <thead>
