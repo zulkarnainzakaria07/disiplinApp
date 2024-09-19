@@ -67,7 +67,7 @@
           </button>
           <ul class="navbar-nav mr-lg-2">
             <li class="nav-item nav-search d-none d-lg-block">
-              Aplikasi Penegakan Disiplin Siswa SMKN 1 Limboto
+              Repositori GitHub : <a href="https://github.com/zulkarnainzakaria07/disiplinApp" target="_blank">Klik Disini</a>
             </li>
           </ul>
           <ul class="navbar-nav navbar-nav-right">
@@ -124,7 +124,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard">
+              <a class="nav-link" href="/">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
