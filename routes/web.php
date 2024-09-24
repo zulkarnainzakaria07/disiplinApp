@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\KelasController;
 
 
 Route::get('/', function () {
@@ -22,6 +23,8 @@ Route::post('/guru/store', [GuruController::class, 'store'])->name('guru.store')
 Route::get('/guru/edit/{id}', [GuruController::class, 'edit'])->name('guru.edit');
 Route::post('/guru/update',[GuruController::class, 'update'])->name('guru.update');
 Route::post('/guru/destroy',[GuruController::class, 'destroy'])->name('guru.destroy');
+
+Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
