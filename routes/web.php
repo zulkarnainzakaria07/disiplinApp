@@ -29,3 +29,5 @@ Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+//test
