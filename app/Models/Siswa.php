@@ -20,4 +20,8 @@ class Siswa extends Model
                             'foto'];
 
     public $timestamps = false;
+
+    public function kelas(){
+        return $this->belongsToMany(Kelas::class, 'kelas_siswa');
+    }
 }

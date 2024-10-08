@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\KelasSiswaController;
+use App\Http\Controllers\PelanggaranController;
+use App\Models\Pelanggaran;
+use App\Models\Siswa;
 
 
 Route::get('/', function () {
@@ -26,6 +30,23 @@ Route::post('/guru/destroy',[GuruController::class, 'destroy'])->name('guru.dest
 
 Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
 
+Route::get('/siswaListToAdd/{id}', [KelasSiswaController::class, 'list'])->name('siswa.listToAdd');
+Route::get('/siswaListed/{id}', [KelasSiswaController::class, 'listed'])->name('siswa.listed');
+Route::post('/addToKelas', [KelasSiswaController::class, 'add'])->name('siswa.addToKelas');
+Route::post('/removeFromKelas', [KelasSiswaController::class, 'remove'])->name('siswa.removeFromKelas');
+
+Route::get('/pelanggaran',[PelanggaranController::class, 'index'])->name('pelanggaran.index');
+Route::get('/pelanggaran/create',[PelanggaranController::class, 'create'])->name('pelanggaran.create');
+Route::post('/pelanggaran/store', [PelanggaranController::class, 'store'])->name('pelanggaran.store');
+Route::get('/pelanggaran/edit/{id}', [PelanggaranController::class, 'edit'])->name('pelanggaran.edit');
+Route::post('/pelanggaran/update',[PelanggaranController::class, 'update'])->name('pelanggaran.update');
+Route::post('/pelanggaran/destroy',[PelanggaranController::class, 'destroy'])->name('pelanggaran.destroy');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+// Route::get('/tes', function () {
+//     $siswa = Siswa::find(1);
+//     $siswa->kelas()->sync(2);
+// });
