@@ -46,7 +46,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-// Route::get('/tes', function () {
-//     $siswa = Siswa::find(1);
-//     $siswa->kelas()->sync(2);
-// });
+Route::get('/tes', function () {
+    $siswa = Siswa::find(1);
+    $siswa->kelas()->sync(2);
+});
