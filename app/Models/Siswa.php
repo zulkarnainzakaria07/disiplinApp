@@ -24,4 +24,9 @@ class Siswa extends Model
     public function kelas(){
         return $this->belongsToMany(Kelas::class, 'kelas_siswa');
     }
+
+    public function kelass()
+    {
+        return $this->belongsTo(Kelas::class);
+    }
 }

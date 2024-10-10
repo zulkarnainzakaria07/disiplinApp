@@ -6,6 +6,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\KelasSiswaController;
 use App\Http\Controllers\PelanggaranController;
+use App\Http\Controllers\KasusController;
 use App\Models\Pelanggaran;
 use App\Models\Siswa;
 
@@ -41,6 +42,8 @@ Route::post('/pelanggaran/store', [PelanggaranController::class, 'store'])->name
 Route::get('/pelanggaran/edit/{id}', [PelanggaranController::class, 'edit'])->name('pelanggaran.edit');
 Route::post('/pelanggaran/update',[PelanggaranController::class, 'update'])->name('pelanggaran.update');
 Route::post('/pelanggaran/destroy',[PelanggaranController::class, 'destroy'])->name('pelanggaran.destroy');
+
+Route::get('/kasus',[KasusController::class, 'index'])->name('kasus.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
