@@ -24,7 +24,7 @@
                     <select class="form-control js-example-basic-single w-100" required>
                     <option value=""></option>
                     @foreach($siswa as $s)
-                        <option value="{{ $s->nama }}">{{ $s->nama }} | 
+                        <option value="{{ $s->id }}">{{ $s->nama }} | 
                             @foreach ($s->kelas as $k)
                                 {{$k['nama']}}
                             @endforeach
@@ -37,7 +37,7 @@
                     <select class="js-example-basic-single w-100 form-control" required>
                     <option value=""></option>
                     @foreach($pelanggaran as $p)
-                        <option value="{{ $s->nama }}">{{ $p->nama }} | {{ $p->poin }} Poin 
+                        <option value="{{ $s->id }}">{{ $p->nama }} | {{ $p->poin }} Poin 
                         </option>
                     @endforeach
                     </select>
