@@ -161,7 +161,13 @@
             <li class="nav-item">
               <a class="nav-link" href="/kasus">
                 <i class="mdi mdi-alert-circle-outline menu-icon"></i>
-                <span class="menu-title">Kasus</span>
+                <span class="menu-title">Temuan Kasus</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kasus/daftar">
+                <i class="mdi mdi-auto-fix menu-icon"></i>
+                <span class="menu-title">Daftar Temuan</span>
               </a>
             </li>
             <hr>

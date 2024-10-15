@@ -44,6 +44,8 @@ Route::post('/pelanggaran/update',[PelanggaranController::class, 'update'])->nam
 Route::post('/pelanggaran/destroy',[PelanggaranController::class, 'destroy'])->name('pelanggaran.destroy');
 
 Route::get('/kasus',[KasusController::class, 'index'])->name('kasus.index');
+Route::post('/kasus/store', [KasusController::class, 'store'])->name('kasus.store');
+Route::get('/kasus/daftar',[KasusController::class, 'daftar'])->name('kasus.daftar');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
