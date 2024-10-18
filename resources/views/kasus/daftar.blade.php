@@ -51,7 +51,7 @@
                                             @elseif ($d->status == 2)
                                             [{{$d->status}}] Laporan Sedang Di Proses
                                             @else
-                                            [{{$d->status}}] Penanganan Selesai
+                                            [{{$d->status}}] Penanganan Kasus Selesai
                                             @endif
                                         </td>
                                         <td>{{$d->catatanPenanganan}}</td>
@@ -59,7 +59,7 @@
                                             <form action="{{ route('siswa.destroy')}}" method="post">
                                                 @csrf
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a href="{{ route('siswa.edit', $d->id) }}" class="btn btn-sm btn-warning">Update</a>
+                                                    <a href="{{ route('kasus.update', $d->id) }}" class="btn btn-sm btn-warning">Update</a>
                                                     <input type="hidden" name="id" value="{{$d->id}}">
                                                     <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin menghapus?')">Delete</button>
                                                 </div>

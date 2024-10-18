@@ -43,4 +43,22 @@ class KasusController extends Controller
 
         return view('kasus.daftar',compact('data'));
     }
+
+    public function update($id){
+        $data = PelanggaranSiswa::find($id);
+        
+        return view('kasus.update', compact('data'));
+
+    }
+
+    public function storeUpdate(Request $request){
+        $data = PelanggaranSiswa::find($request->id);
+
+        $data->catatanPenanganan = $request->catatanPenanganan;
+        $data->status = $request->status;
+        $data->update();
+
+        return redirect()->route('kasus.daftar');
+
+    }
 }
