@@ -50,13 +50,12 @@ class GuruController extends Controller
 
         //penambahan di table users
         $defaultPass = '12345';
-       $user = User::create([
+        $user = User::create([
             'name' => $request->nama,
             'email' => $request->email,
             'password' => Hash::make($defaultPass),
         ]);
-
-
+        
         return redirect()->route('guru.index');
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\GuruController;
@@ -18,9 +19,7 @@ Route::post('/login/cek', [\App\Http\Controllers\LoginController::class, 'loginC
 Route::get('/logout', [\App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'] )->name('dashboard');
     
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
     Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
@@ -29,12 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/siswa/update',[SiswaController::class, 'update'])->name('siswa.update');
     Route::post('/siswa/destroy',[SiswaController::class, 'destroy'])->name('siswa.destroy');
 
-    Route::get('/guru', [GuruController::class, 'index'])->name('guru.index');
-    Route::get('/guru/create', [GuruController::class, 'create'])->name('guru.create');
-    Route::post('/guru/store', [GuruController::class, 'store'])->name('guru.store');
-    Route::get('/guru/edit/{id}', [GuruController::class, 'edit'])->name('guru.edit');
-    Route::post('/guru/update',[GuruController::class, 'update'])->name('guru.update');
-    Route::post('/guru/destroy',[GuruController::class, 'destroy'])->name('guru.destroy');
+    
 
     Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
     Route::get('/siswaListToAdd/{id}', [KelasSiswaController::class, 'list'])->name('siswa.listToAdd');
@@ -54,4 +48,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/kasus/storeUpdate', [KasusController::class, 'storeUpdate'])->name('kasus.storeUpdate');
     Route::get('/kasus/daftar',[KasusController::class, 'daftar'])->name('kasus.daftar');
     Route::get('/kasus/update/{id}', [KasusController::class, 'update'])->name('kasus.update');
+
+    Route::get('/guru', [GuruController::class, 'index'])->name('guru.index');
+    Route::get('/guru/create', [GuruController::class, 'create'])->name('guru.create');
+    Route::post('/guru/store', [GuruController::class, 'store'])->name('guru.store');
+    Route::get('/guru/edit/{id}', [GuruController::class, 'edit'])->name('guru.edit');
+    Route::post('/guru/update',[GuruController::class, 'update'])->name('guru.update');
+    Route::post('/guru/destroy',[GuruController::class, 'destroy'])->name('guru.destroy');
+
 });
+
