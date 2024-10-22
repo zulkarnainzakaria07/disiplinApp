@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Guru;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class GuruController extends Controller
 {
@@ -44,6 +47,15 @@ class GuruController extends Controller
             'telp' => $request->telp,
             'foto' => $name
         ]); // pengiriman nama file ke database
+
+        //penambahan di table users
+        $defaultPass = '12345';
+       $user = User::create([
+            'name' => $request->nama,
+            'email' => $request->email,
+            'password' => Hash::make($defaultPass),
+        ]);
+
 
         return redirect()->route('guru.index');
     }

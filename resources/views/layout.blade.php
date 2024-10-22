@@ -79,17 +79,7 @@
               
                 Selamat Datang, Admin Aplikasi Penegakan Disiplin Siswa
             
-              <div
-                class="dropdown-menu dropdown-menu-right navbar-dropdown"
-                aria-labelledby="profileDropdown"
-              >
-                <a class="dropdown-item">
-                  <i class="ti-settings text-primary"></i> Settings
-                </a>
-                <a class="dropdown-item">
-                  <i class="ti-power-off text-primary"></i> Logout
-                </a>
-              </div>
+              
             </li>
             <li class="nav-item nav-settings nav-profile dropdown">
             <a
@@ -105,11 +95,13 @@
                 aria-labelledby="profileDropdown"
               >
                 <a class="dropdown-item">
-                  <i class="ti-settings text-primary"></i> Settings
+                  <i class="ti-settings text-primary"></i> Update Profil
                 </a>
-                <a class="dropdown-item">
-                  <i class="ti-power-off text-primary"></i> Logout
+                <a class="dropdown-item" href="{{ route('logout') }}">
+                  <i class="ti-settings text-primary"></i> Logout
                 </a>
+                  
+                
               </div>
             </li>
           </ul>
@@ -128,7 +120,7 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/dashboard">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
